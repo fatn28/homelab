@@ -1,0 +1,99 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="800" fill="#0f1115"/>
+
+  <text x="600" y="40" text-anchor="middle" fill="#ffffff" font-size="26" font-weight="bold">Homelab Netzwerktopologie</text>
+
+  <!-- Internet -->
+  <circle cx="600" cy="90" r="28" fill="#2b6cb0" stroke="#63b3ed" stroke-width="2"/>
+  <text x="600" y="96" text-anchor="middle" fill="white" font-size="14">Internet</text>
+  <text x="600" y="130" text-anchor="middle" fill="#a0aec0" font-size="12">(Mobilfunk / o2)</text>
+
+  <!-- Fritz!Box -->
+  <rect x="520" y="150" width="160" height="55" rx="8" fill="#2d3748" stroke="#4a5568" stroke-width="2"/>
+  <text x="600" y="173" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Fritz!Box 6860 5G</text>
+  <text x="600" y="192" text-anchor="middle" fill="#a0aec0" font-size="11">Cellular Modem</text>
+  <line x1="600" y1="118" x2="600" y2="150" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- pfSense -->
+  <rect x="500" y="245" width="200" height="60" rx="8" fill="#22543d" stroke="#48bb78" stroke-width="2"/>
+  <text x="600" y="270" text-anchor="middle" fill="white" font-size="15" font-weight="bold">pfSense</text>
+  <text x="600" y="290" text-anchor="middle" fill="#c6f6d5" font-size="11">Firewall / Router (Mini-PC)</text>
+  <line x1="600" y1="205" x2="600" y2="245" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="615" y="228" fill="#a0aec0" font-size="11">WAN (igc0)</text>
+
+  <!-- Switch -->
+  <rect x="500" y="345" width="200" height="55" rx="8" fill="#2d3748" stroke="#4a5568" stroke-width="2"/>
+  <text x="600" y="368" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Netgear GS308EP</text>
+  <text x="600" y="386" text-anchor="middle" fill="#a0aec0" font-size="11">Managed PoE Switch (8 Port)</text>
+  <line x1="600" y1="305" x2="600" y2="345" stroke="#48bb78" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="700" y="328" fill="#68d391" font-size="11">Trunk (Tagged: 20,30,40,99)</text>
+
+  <!-- Devices row -->
+  <!-- Pi-hole -->
+  <rect x="60" y="470" width="180" height="70" rx="8" fill="#2c5282" stroke="#63b3ed" stroke-width="2"/>
+  <text x="150" y="495" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Pi-hole</text>
+  <text x="150" y="513" text-anchor="middle" fill="#bee3f8" font-size="11">Raspberry Pi 5</text>
+  <text x="150" y="529" text-anchor="middle" fill="#bee3f8" font-size="11">VLAN 10 · 192.168.10.101</text>
+
+  <!-- AP -->
+  <rect x="280" y="470" width="180" height="70" rx="8" fill="#744210" stroke="#ecc94b" stroke-width="2"/>
+  <text x="370" y="495" text-anchor="middle" fill="white" font-size="14" font-weight="bold">TP-Link AP</text>
+  <text x="370" y="513" text-anchor="middle" fill="#fefcbf" font-size="11">WLAN "WLAN" SSID</text>
+  <text x="370" y="529" text-anchor="middle" fill="#fefcbf" font-size="11">VLAN 20 · 192.168.20.0/24</text>
+
+  <!-- Laptop -->
+  <rect x="500" y="470" width="180" height="70" rx="8" fill="#44337a" stroke="#9f7aea" stroke-width="2"/>
+  <text x="590" y="495" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Admin-Laptop</text>
+  <text x="590" y="513" text-anchor="middle" fill="#e9d8fd" font-size="11">ASUS ROG Zephyrus</text>
+  <text x="590" y="529" text-anchor="middle" fill="#e9d8fd" font-size="11">VLAN 40 · 192.168.40.0/24</text>
+
+  <!-- Guest -->
+  <rect x="720" y="470" width="180" height="70" rx="8" fill="#742a2a" stroke="#fc8181" stroke-width="2"/>
+  <text x="810" y="495" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Guest-Port</text>
+  <text x="810" y="513" text-anchor="middle" fill="#fed7d7" font-size="11">isoliert</text>
+  <text x="810" y="529" text-anchor="middle" fill="#fed7d7" font-size="11">VLAN 99 · 192.168.99.0/24</text>
+
+  <!-- Lab -->
+  <rect x="940" y="470" width="180" height="70" rx="8" fill="#234e52" stroke="#4fd1c5" stroke-width="2"/>
+  <text x="1030" y="495" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Lab-Port</text>
+  <text x="1030" y="513" text-anchor="middle" fill="#c4f1f9" font-size="11">Docker/K8s Sandbox</text>
+  <text x="1030" y="529" text-anchor="middle" fill="#c4f1f9" font-size="11">VLAN 30 · 192.168.30.0/24</text>
+
+  <!-- lines from switch to devices -->
+  <line x1="560" y1="400" x2="150" y2="470" stroke="#63b3ed" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="580" y1="400" x2="370" y2="470" stroke="#ecc94b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="600" y1="400" x2="590" y2="470" stroke="#9f7aea" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="620" y1="400" x2="810" y2="470" stroke="#fc8181" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="640" y1="400" x2="1030" y2="470" stroke="#4fd1c5" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Trust matrix -->
+  <text x="600" y="600" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold">Trust-Matrix</text>
+
+  <g font-size="12">
+    <rect x="60" y="620" width="1080" height="150" rx="8" fill="#1a202c" stroke="#2d3748" stroke-width="1"/>
+
+    <text x="90" y="648" fill="#63b3ed" font-weight="bold">MGMT (10)</text>
+    <text x="90" y="668" fill="#cbd5e0">→ Voller Zugriff überall (Kontrollebene)</text>
+
+    <text x="90" y="698" fill="#9f7aea" font-weight="bold">TRUSTED (40)</text>
+    <text x="90" y="718" fill="#cbd5e0">→ Internet + MGMT (Administration) · sonst nichts</text>
+
+    <text x="480" y="648" fill="#ecc94b" font-weight="bold">WLAN (20)</text>
+    <text x="480" y="668" fill="#cbd5e0">→ Internet + DNS zu Pi-hole · kein Zugriff auf andere VLANs</text>
+
+    <text x="480" y="698" fill="#4fd1c5" font-weight="bold">LAB (30)</text>
+    <text x="480" y="718" fill="#cbd5e0">→ Internet + DNS zu Pi-hole · komplett isoliert (Sandbox)</text>
+
+    <text x="900" y="648" fill="#fc8181" font-weight="bold">GUEST (99)</text>
+    <text x="900" y="668" fill="#cbd5e0">→ nur Internet (öffentliches DNS)</text>
+    <text x="900" y="688" fill="#cbd5e0">→ kein Zugriff auf irgendein internes Gerät</text>
+  </g>
+
+  <text x="600" y="790" text-anchor="middle" fill="#718096" font-size="11">Default-Deny zwischen Segmenten · explizite Allow-Regeln pro VLAN (pfSense)</text>
+</svg>
